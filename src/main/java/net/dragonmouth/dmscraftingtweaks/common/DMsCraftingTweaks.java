@@ -1,6 +1,9 @@
 package net.dragonmouth.dmscraftingtweaks.common;
 
+import java.io.File;
+
 import net.dragonmouth.dmscraftingtweaks.crafting.CraftingManager;
+import net.dragonmouth.dmscraftingtweaks.handlers.ConfigHandler;
 import net.dragonmouth.dmscraftingtweaks.handlers.LogHandler;
 import net.dragonmouth.dmscraftingtweaks.proxy.ClientProxy;
 import net.dragonmouth.dmscraftingtweaks.proxy.CommonProxy;
@@ -19,6 +22,9 @@ public class DMsCraftingTweaks {
 	@Instance
 	public static DMsCraftingTweaks instance;
 	
+	// Creates a variable for the config directory
+	public static File configDir;
+	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 	public static ClientProxy clientProxy;
@@ -29,7 +35,10 @@ public class DMsCraftingTweaks {
 		
 		LogHandler.logHandler.info("Pre-Initialization Started!");
 		
-		// Nothing to Pre-Initialize Yet!
+		// Setup the config file and information for it.
+		configDir = new File(event.getModConfigurationDirectory() + "/" + "DragonMouthsMods" + "/" + Reference.MODID);
+		configDir.mkdirs();
+		ConfigHandler.init(new File(configDir.getPath(), Reference.MODID + ".cfg"));
 		
 		LogHandler.logHandler.info("Pre-Initialization Complete!");
 		
