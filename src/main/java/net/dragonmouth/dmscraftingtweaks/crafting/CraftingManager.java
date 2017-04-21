@@ -13,24 +13,36 @@ public class CraftingManager {
 		
 		LogHandler.logHandler.info("Starting to register Crafting Recipes!");
 		
+		/*
+		 * HORSE/ANIMAL CRAFTING RECIPES
+		 */
+		
 		// Horse Armor Recipes
 		if (ConfigHandler.horseArmorCraftingRecipesEnabled == true) {
-			LogHandler.logHandler.info("Starting to register Horse Armor Recipes!");
+
 			if (ConfigHandler.horseArmorCraftingUsesSaddle == true) {
+				
+				LogHandler.logHandler.info("Starting to register Horse Armor Recipes using a saddle!");
 				
 				GameRegistry.addShapedRecipe(new ItemStack(Items.IRON_HORSE_ARMOR, 1, 0), "  I", "ISI", "ILI", 'I', Items.IRON_INGOT, 'L', Items.LEATHER, 'S', Items.SADDLE);
 				GameRegistry.addShapedRecipe(new ItemStack(Items.GOLDEN_HORSE_ARMOR, 1, 0), "  G", "GSG", "GLG", 'G', Items.GOLD_INGOT, 'L', Items.LEATHER, 'S', Items.SADDLE);
 				GameRegistry.addShapedRecipe(new ItemStack(Items.DIAMOND_HORSE_ARMOR, 1, 0), "  D", "DSD", "DLD", 'D', Items.DIAMOND, 'L', Items.LEATHER, 'S', Items.SADDLE);
 				
+				LogHandler.logHandler.info("Finished registering Horse Armor Recipes using a saddle!");
+				
 			}
 			else {
+				
+				LogHandler.logHandler.info("Starting to register Horse Armor Recipes!");
 				
 				GameRegistry.addShapedRecipe(new ItemStack(Items.IRON_HORSE_ARMOR, 1, 0), "  I", "IWI", "ILI", 'I', Items.IRON_INGOT, 'L', Items.LEATHER, 'W', Blocks.WOOL);
 				GameRegistry.addShapedRecipe(new ItemStack(Items.GOLDEN_HORSE_ARMOR, 1, 0), "  G", "GWG", "GLG", 'G', Items.GOLD_INGOT, 'L', Items.LEATHER, 'W', Blocks.WOOL);
 				GameRegistry.addShapedRecipe(new ItemStack(Items.DIAMOND_HORSE_ARMOR, 1, 0), "  D", "DWD", "DLD", 'D', Items.DIAMOND, 'L', Items.LEATHER, 'W', Blocks.WOOL);
 			
+				LogHandler.logHandler.info("Finished registering Horse Armor Recipes!");
+				
 			}
-			LogHandler.logHandler.info("Finished registering Horse Armor Recipes!");
+
 		}
 		else {
 			
@@ -83,6 +95,110 @@ public class CraftingManager {
 		else {
 			
 			LogHandler.logHandler.info("Nametag Crafting Recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		/*
+		 * DRAGON CRAFTING RECIPES
+		 */
+		
+		// Ender Crystal Recipe
+		if (ConfigHandler.endCrystalCraftingRecipeEnabled == true) {
+			
+			if (ConfigHandler.endCrystalCraftingUsesEmeralds == true) {
+				
+				LogHandler.logHandler.info("Starting to register the Ender Crystal recipe using emeralds!");
+				
+				GameRegistry.addShapedRecipe(new ItemStack(Items.END_CRYSTAL, 1, 0), "GEG", "ESE", "GEG", 'G', Blocks.GLASS, 'E', Items.EMERALD, 'S', Items.NETHER_STAR);
+				
+				LogHandler.logHandler.info("Finished registering the Ender Crystal recipe using emeralds!");
+				
+			}
+			if (ConfigHandler.endCrystalCraftingUsesEnderPearls == true) {
+				
+				LogHandler.logHandler.info("Starting to register the Ender Crystal recipe using ender pearls!");
+				
+				GameRegistry.addShapedRecipe(new ItemStack(Items.END_CRYSTAL, 1, 0), "GEG", "ESE", "GEG", 'G', Blocks.GLASS, 'E', Items.ENDER_PEARL, 'S', Items.NETHER_STAR);
+				
+				LogHandler.logHandler.info("Finished registering the Ender Crystal recipe using ender pearls!");
+				
+			}
+			else {
+				
+				LogHandler.logHandler.info("Starting to register the Ender Crystal recipe!");
+				
+				GameRegistry.addShapedRecipe(new ItemStack(Items.END_CRYSTAL, 1, 0), "GDG", "DSD", "GDG", 'G', Blocks.GLASS, 'D', Items.DIAMOND, 'S', Items.NETHER_STAR);
+				
+				LogHandler.logHandler.info("Finished registering the Ender Crystal recipe!");
+				
+			}
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Ender Crystal crafting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		// Dragon's Breath recipe
+		if (ConfigHandler.dragonsBreathCraftingRecipesEnabled == true) {
+			
+			LogHandler.logHandler.info("Starting to register the Dragon's Breath recipes!");
+			
+			GameRegistry.addShapedRecipe(new ItemStack(Items.DRAGON_BREATH, 1, 0), " W ", "GEG", "GGG", 'G', Blocks.GLASS, 'W', Blocks.LOG, 'E', Items.END_CRYSTAL);
+			GameRegistry.addShapelessRecipe(new ItemStack(Items.DRAGON_BREATH, 1, 0), new ItemStack(Items.GLASS_BOTTLE, 1, 0), new ItemStack(Items.END_CRYSTAL, 1, 0));
+			
+			LogHandler.logHandler.info("Finished registering the Dragon's Breath recipes!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Dragon's Breath crafting recipes are DISABLED in the config! Moving on!");
+			
+		}
+		
+		// Dragon Egg Recipe
+		if (ConfigHandler.dragonEggCraftingRecipeEnabled == true) {
+			
+			if (ConfigHandler.dragonEggCraftingUsesMoreObsidian == true) {
+				
+				LogHandler.logHandler.info("Starting to register the DragonEgg recipe using more obsidian!");
+				
+				GameRegistry.addShapedRecipe(new ItemStack(Blocks.DRAGON_EGG, 1, 0), "OOO", "OCO", "OEO", 'O', Blocks.OBSIDIAN, 'C', Items.END_CRYSTAL, 'E', Items.EGG);
+				
+				LogHandler.logHandler.info("Finished registering the DragonEgg recipe using more obsidian!");
+				
+			}
+			else {
+				
+				LogHandler.logHandler.info("Starting to register the DragonEgg recipe!");
+				
+				GameRegistry.addShapedRecipe(new ItemStack(Blocks.DRAGON_EGG, 1, 0), " O ", "OCO", "OEO", 'O', Blocks.OBSIDIAN, 'C', Items.END_CRYSTAL, 'E', Items.EGG);
+				
+				LogHandler.logHandler.info("Finished registering the DragonEgg recipe!");
+				
+			}
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Dragon Egg crafting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		// Dragon Egg Duplication Recipe
+		if (ConfigHandler.dragonEggDuplicationEnabled == true) {
+			
+			LogHandler.logHandler.info("Starting to register the DragonEgg Duplication recipe!");
+			
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.DRAGON_EGG, 2, 0), new ItemStack(Blocks.DRAGON_EGG, 1, 0));
+			
+			LogHandler.logHandler.info("Finished registering the DragonEgg Duplication recipe!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Dragon Egg Duplication recipe is DISABLED in the config! Moving on!");
 			
 		}
 		
