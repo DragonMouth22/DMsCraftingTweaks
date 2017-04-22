@@ -2,10 +2,12 @@ package net.dragonmouth.dmscraftingtweaks.crafting;
 
 import net.dragonmouth.dmscraftingtweaks.handlers.ConfigHandler;
 import net.dragonmouth.dmscraftingtweaks.handlers.LogHandler;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 public class CraftingManager {
 
@@ -199,6 +201,46 @@ public class CraftingManager {
 		else {
 			
 			LogHandler.logHandler.info("The Dragon Egg Duplication recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		/*
+		 * RECORD CRAFTING RECIPES
+		 */
+		
+		if (ConfigHandler.recordCraftingRecipesEnabled == true) {
+			
+			LogHandler.logHandler.info("Starting to register the Record crafting recipes!");
+			
+			// Shaped Recipe
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_11, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 0));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_13, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 11));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_BLOCKS, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 14));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_CAT, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 10));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_CHIRP, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 1));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_FAR, 1, 0), "VDV", "VEV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 10), 'E', new ItemStack(Items.DYE, 1, 11));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_MALL, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 5));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_MELLOHI, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 13));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_STAL, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 8));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_STRAD, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 15));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_WAIT, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 12));
+			GameRegistry.addShapedRecipe(new ItemStack(Items.RECORD_WARD, 1, 0), "VDV", "VVV", 'V', Items.FLINT, 'D', new ItemStack(Items.DYE, 1, 2));
+			
+			// Shapeless Recipes
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_11, 1, 0), "record", "dyeBlack"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_13, 1, 0), "record", "dyeYellow"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_BLOCKS, 1, 0), "record", "dyeOrange"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_CAT, 1, 0), "record", "dyeLime"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_CHIRP, 1, 0), "record", "dyeRed"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_FAR, 1, 0), "record", "dyeLime", "dyeYellow"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_MALL, 1, 0), "record", "dyePurple"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_MELLOHI, 1, 0), "record", "dyeMagenta"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_STAL, 1, 0), "record", "dyeGray"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_STRAD, 1, 0), "record", "dyeWhite"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_WAIT, 1, 0), "record", "dyeLightBlue"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.RECORD_WARD, 1, 0), "record", "dyeGreen"));
+			
+			LogHandler.logHandler.info("Finished registering the Record crafting recipes!");
 			
 		}
 		

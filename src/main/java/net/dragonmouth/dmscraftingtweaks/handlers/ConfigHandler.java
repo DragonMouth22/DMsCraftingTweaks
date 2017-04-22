@@ -2,6 +2,7 @@ package net.dragonmouth.dmscraftingtweaks.handlers;
 
 import java.io.File;
 
+import net.minecraft.init.Items;
 import net.minecraftforge.common.config.Configuration;
 
 public class ConfigHandler {
@@ -23,6 +24,19 @@ public class ConfigHandler {
 	public static boolean dragonEggCraftingUsesMoreObsidian;
 	public static boolean dragonEggDuplicationEnabled;
 	
+	public static boolean recordCraftingRecipesEnabled;
+	
+	// Not working properly
+	//public static String recordMaterial;
+	
+	// To work on later
+	/*public static boolean recordCraftingUsesCoalBlocks;
+	public static boolean recordCraftingUsesCoal;
+	public static boolean recordCraftingUsesObsidian;
+	public static boolean recordCraftingUsesClay;
+	public static boolean recordCraftingUsesWool;
+	public static boolean recordCraftingUsesCarpet;*/
+	
 	public static void init(File file) {
 		
 		LogHandler.logHandler.info("Beginning config initialization!");
@@ -41,6 +55,7 @@ public class ConfigHandler {
 		LogHandler.logHandler.info("Creating and registering the Horse/Animals category for the config!");
 		category = "Horses/Animals";
 		config.addCustomCategoryComment(category, "Horses/Animals");
+		
 		horseArmorCraftingRecipesEnabled = config.getBoolean("EnableHorseArmorCraftingRecipes", category, true, "Enable or disable the crafting recipes for horse armor.");
 		horseArmorCraftingUsesSaddle = config.getBoolean("HorseArmorCraftingUsesSaddle", category, false, "Instead of wool, the horse armor crafting recipes will use a saddle.");
 		
@@ -53,6 +68,7 @@ public class ConfigHandler {
 		LogHandler.logHandler.info("Creating and registering the Dragon category for the config!");
 		category = "Dragon";
 		config.addCustomCategoryComment(category, "Dragon");
+		
 		endCrystalCraftingRecipeEnabled = config.getBoolean("EndCrystalCraftingRecipeEnabled", category, true, "Enable or disable the crafting recipe for the End Crystals.");
 		endCrystalCraftingUsesEmeralds = config.getBoolean("EndCrystalCraftingUsesEmeralds", category, false, "Instead of diamonds, the End Crystal crafting recipe will use emeralds.");
 		endCrystalCraftingUsesEnderPearls = config.getBoolean("EndCrystalCraftingUsesEnderPearls", category, true, "Instead of diamonds, the End Crystal crafting recipe will use ender pearls.");
@@ -62,6 +78,23 @@ public class ConfigHandler {
 		dragonEggCraftingRecipeEnabled = config.getBoolean("DragonEggCraftingRecipeEnabled", category, true, "Enable or disable the crafting recipe for the Dragon Egg");
 		dragonEggCraftingUsesMoreObsidian = config.getBoolean("DragonEggCraftingUsesMoreObsidian", category, true, "Instead of 5 obsidian, 7 obsidian will be used in the Dragon Egg crafting recipe.");
 		dragonEggDuplicationEnabled = config.getBoolean("DragonEggDuplicationEnabled", category, false, "Enable or disable a crafting recipe that allows the Dragon Egg to be duplicated.");
+		
+		LogHandler.logHandler.info("Creating and registering the Records category for the config!");
+		category = "Records";
+		config.addCustomCategoryComment(category, "Records");
+		
+		recordCraftingRecipesEnabled = config.getBoolean("RecordCraftingRecipesEnabled", category, true, "Enable or disable the crafting recipes for records.");
+		
+		// Not working properly
+		//recordMaterial = config.getString("RecordMaterial", category, "Items.FLINT", "Change the material used to craft the record material (e.g. Blocks.COAL_BLOCK, Items.FLINT).");
+		
+		// To work on later
+		/*recordCraftingUsesCoalBlocks = config.getBoolean("RecordCraftingUsesCoalBlocks", category, false, "Instead of flint, use coal blocks for the record crafting recipes.");
+		recordCraftingUsesCoal = config.getBoolean("RecordCraftingUsesCoal", category, false, "Instead of flint, use coal for the record crafting recipes.");
+		recordCraftingUsesObsidian = config.getBoolean("RecordCraftingUsesObsidian", category, false, "Instead of flint, use obsidian for the record crafting recipes.");
+		recordCraftingUsesClay = config.getBoolean("RecordCraftingUsesClay", category, false, "Instead of flint, use obsidian for the record crafting recipes.");
+		recordCraftingUsesWool = config.getBoolean("RecordCraftingUsesWool", category, false, "Instead of flint, use black wool for the record crafting recipes.");
+		recordCraftingUsesCarpet = config.getBoolean("RecordCraftingUsesCarpet", category, false, "Instead of flint, use black carpet for the record crafting recipes.");*/
 		
 		config.save();
 		LogHandler.logHandler.info("Saved the config.");
