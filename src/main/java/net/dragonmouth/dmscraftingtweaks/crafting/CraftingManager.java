@@ -243,6 +243,103 @@ public class CraftingManager {
 			LogHandler.logHandler.info("Finished registering the Record crafting recipes!");
 			
 		}
+		else {
+			
+			LogHandler.logHandler.info("The Record crafting recipes are DISABLED in the config! Moving on!");
+			
+		}
+		
+		/*
+		 * SKULL CRAFTING RECIPES
+		 */
+		
+		if (ConfigHandler.skullSkeletonCraftingRecipeEnabled == true) {
+			
+			if (ConfigHandler.skullSkeletonCraftingUsesDiamond == true) {
+				
+				LogHandler.logHandler.info("Started to register the Skeleton Skull crafting recipe using a diamond!");
+				
+				GameRegistry.addShapedRecipe(new ItemStack(Items.SKULL, 1, 0), "BBB", "BDB", "CCC", 'B', Blocks.BONE_BLOCK, 'D', Items.DIAMOND, 'C', Items.BONE);
+				
+				LogHandler.logHandler.info("Finished registering the Skeleton Skull crafting recipe using a diamond!");
+				
+			}
+			else {
+				
+				LogHandler.logHandler.info("Started to register the Skeleton Skull crafting recipe!");
+				
+				GameRegistry.addShapedRecipe(new ItemStack(Items.SKULL, 1, 0), "BBB", "BSB", "CCC", 'B', Blocks.BONE_BLOCK, 'S', Items.NETHER_STAR, 'C', Items.BONE);
+				
+				LogHandler.logHandler.info("Finished registering the Skeleton Skull crafting recipe!");
+				
+			}
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Skeleton Skull crafting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		if (ConfigHandler.skullWitherSkeletonCraftingRecipeEnabled == true) {
+			
+			LogHandler.logHandler.info("Started to register the Wither Skeleton Skull crafting recipe!");
+			
+			GameRegistry.addShapedRecipe(new ItemStack(Items.SKULL, 1, 1), "BCB", "CSC", "BCB", 'B', Blocks.COAL_BLOCK, 'C', Items.COAL, 'S', new ItemStack(Items.SKULL, 1, 0));
+			
+			LogHandler.logHandler.info("Finished registering the Wither Skeleton Skull crafting recipe!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Wither Skeleton Skull crafting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		if (ConfigHandler.skullCreeperCraftingRecipeEnabled == true) {
+			
+			LogHandler.logHandler.info("Started to register the Creeper Skull crafting recipe!");
+			
+			GameRegistry.addShapedRecipe(new ItemStack(Items.SKULL, 1, 4), "TGT", "GSG", "TGT", 'T', Blocks.TNT, 'G', Items.GUNPOWDER, 'S', new ItemStack(Items.SKULL, 1, 0));
+			
+			LogHandler.logHandler.info("Finished registering the Creeper Skull crafting recipe!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Creeper Skull crafting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		if (ConfigHandler.skullZombieCraftingRecipeEnabled == true) {
+			
+			LogHandler.logHandler.info("Started to register the Zombie Skull crafting recipe!");
+			
+			GameRegistry.addShapedRecipe(new ItemStack(Items.SKULL, 1, 2), "FFF", "FSF", "FFF", 'F', Items.ROTTEN_FLESH, 'S', new ItemStack(Items.SKULL, 1, 0));
+			
+			LogHandler.logHandler.info("Finished registering the Zombie Skull crafting recipe!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Zombie Skull crafting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		if (ConfigHandler.skullDragonCraftingRecipeEnabled == true) {
+			
+			LogHandler.logHandler.info("Started to register the Dragon Skull crafting recipe!");
+			
+			GameRegistry.addShapedRecipe(new ItemStack(Items.SKULL, 1, 5), "ECE", "CSC", "ECE", 'E', Blocks.DRAGON_EGG, 'C', Items.END_CRYSTAL, 'S', new ItemStack(Items.SKULL, 1, 0));
+			
+			LogHandler.logHandler.info("Finished registering the Dragon Skull crafting recipe!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Dragon Skull crafting recipe is DISABLED in the config! Moving on!");
+			
+		}
 		
 		LogHandler.logHandler.info("Finished registering Crafting Recipes!");
 		

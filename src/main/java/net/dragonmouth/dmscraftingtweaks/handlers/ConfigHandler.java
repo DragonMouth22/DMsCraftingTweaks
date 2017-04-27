@@ -37,6 +37,13 @@ public class ConfigHandler {
 	public static boolean recordCraftingUsesWool;
 	public static boolean recordCraftingUsesCarpet;*/
 	
+	public static boolean skullSkeletonCraftingRecipeEnabled;
+	public static boolean skullSkeletonCraftingUsesDiamond;
+	public static boolean skullWitherSkeletonCraftingRecipeEnabled;
+	public static boolean skullCreeperCraftingRecipeEnabled;
+	public static boolean skullZombieCraftingRecipeEnabled;
+	public static boolean skullDragonCraftingRecipeEnabled;
+	
 	public static void init(File file) {
 		
 		LogHandler.logHandler.info("Beginning config initialization!");
@@ -95,6 +102,21 @@ public class ConfigHandler {
 		recordCraftingUsesClay = config.getBoolean("RecordCraftingUsesClay", category, false, "Instead of flint, use obsidian for the record crafting recipes.");
 		recordCraftingUsesWool = config.getBoolean("RecordCraftingUsesWool", category, false, "Instead of flint, use black wool for the record crafting recipes.");
 		recordCraftingUsesCarpet = config.getBoolean("RecordCraftingUsesCarpet", category, false, "Instead of flint, use black carpet for the record crafting recipes.");*/
+		
+		LogHandler.logHandler.info("Creating and registering the Skulls category for the config!");
+		category = "Skulls";
+		config.addCustomCategoryComment(category, "Skulls");
+		
+		skullSkeletonCraftingRecipeEnabled = config.getBoolean("SkeletonSkullCraftingRecipeEnabled", category, true, "Enable or disable the crafting recipe for the skeleton skull.");
+		skullSkeletonCraftingUsesDiamond = config.getBoolean("SkeletonSkullCraftingUsesDiamond", category, false, "Instead of a nether star, a diamond will be used in the skeleton skull crafting recipe.");
+		
+		skullWitherSkeletonCraftingRecipeEnabled = config.getBoolean("WitherSkeletonSkullCraftingRecipeEnabled", category, true, "Enable or disable the crafting recipe for the wither skeleton skull.");
+		
+		skullCreeperCraftingRecipeEnabled = config.getBoolean("CreeperSkullCraftingRecipeEnabled", category, true, "Enable or disable the crafting recipe for the creeper head.");
+		
+		skullZombieCraftingRecipeEnabled = config.getBoolean("ZombieSkullCraftingRecipeEnabled", category, true, "Enable or disable the crafting recipe for the zombie head.");
+		
+		skullDragonCraftingRecipeEnabled = config.getBoolean("DragonSkullCraftingRecipeEnabled", category, true, "Enable or disable the crafting recipe for the dragon head.");
 		
 		config.save();
 		LogHandler.logHandler.info("Saved the config.");
