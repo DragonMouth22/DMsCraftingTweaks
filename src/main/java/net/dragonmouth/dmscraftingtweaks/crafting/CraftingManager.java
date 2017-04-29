@@ -341,6 +341,85 @@ public class CraftingManager {
 			
 		}
 		
+		/*
+		 * SMELTING RECIPES
+		 */
+		
+		if (ConfigHandler.rottenFleshToLeatherSmelting == true) {
+			
+			LogHandler.logHandler.info("Started to register the Rotten Flesh to Leather smelting recipe!");
+			
+			GameRegistry.addSmelting(new ItemStack(Items.ROTTEN_FLESH, 1, 0), new ItemStack(Items.LEATHER, 1, 0), 5);
+			
+			LogHandler.logHandler.info("Finished registering the Rotten Flesh to Leather smelting recipe!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Rotten Flesh to Leather smelting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		if (ConfigHandler.boneToBoneMealSmelting == true) {
+			
+			LogHandler.logHandler.info("Started to register the Bone to Bone Meal smelting recipe!");
+			
+			GameRegistry.addSmelting(new ItemStack(Items.BONE, 1, 0), new ItemStack(Items.DYE, 4, 15), 5);
+			
+			LogHandler.logHandler.info("Finished registering the Bone to Bone Meal smelting recipe!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Bone to Bone Meal smelting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		if (ConfigHandler.wheatToBreadSmelting == true) {
+			
+			LogHandler.logHandler.info("Started to register the Wheat to Bread smelting recipe!");
+			
+			GameRegistry.addSmelting(new ItemStack(Items.WHEAT, 3, 0), new ItemStack(Items.BREAD, 1, 0), 25);
+			
+			LogHandler.logHandler.info("Finished registering the Wheat to Bread smelting recipe!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Wheat to Bread smelting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		if (ConfigHandler.slimeballToMagmaCreamSmelting == true) {
+			
+			LogHandler.logHandler.info("Started to register the Slime Ball to Magma Cream smelting recipe!");
+			
+			GameRegistry.addSmelting(new ItemStack(Items.SLIME_BALL, 1, 0), new ItemStack(Items.MAGMA_CREAM, 1, 0), 15);
+			
+			LogHandler.logHandler.info("Finished registering the Slime Ball to Magma Cream smelting recipe!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Slime Ball to Magma Cream smelting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
+		if (ConfigHandler.enderEyeToEnderPearlSmelting == true) {
+			
+			LogHandler.logHandler.info("Started to register the Ender Eye to Ender Pearl smelting recipe!");
+			
+			GameRegistry.addSmelting(new ItemStack(Items.ENDER_EYE, 1, 0), new ItemStack(Items.ENDER_PEARL, 1, 0), 5);
+			
+			LogHandler.logHandler.info("Finished registering the Ender Eye to Ender Pearl smelting recipe!");
+			
+		}
+		else {
+			
+			LogHandler.logHandler.info("The Ender Eye to Ender Pearl smelting recipe is DISABLED in the config! Moving on!");
+			
+		}
+		
 		LogHandler.logHandler.info("Finished registering Crafting Recipes!");
 		
 	}

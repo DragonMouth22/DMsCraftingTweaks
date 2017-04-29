@@ -44,6 +44,12 @@ public class ConfigHandler {
 	public static boolean skullZombieCraftingRecipeEnabled;
 	public static boolean skullDragonCraftingRecipeEnabled;
 	
+	public static boolean rottenFleshToLeatherSmelting;
+	public static boolean boneToBoneMealSmelting;
+	public static boolean wheatToBreadSmelting;
+	public static boolean slimeballToMagmaCreamSmelting;
+	public static boolean enderEyeToEnderPearlSmelting;
+	
 	public static void init(File file) {
 		
 		LogHandler.logHandler.info("Beginning config initialization!");
@@ -117,6 +123,20 @@ public class ConfigHandler {
 		skullZombieCraftingRecipeEnabled = config.getBoolean("ZombieSkullCraftingRecipeEnabled", category, true, "Enable or disable the crafting recipe for the zombie head.");
 		
 		skullDragonCraftingRecipeEnabled = config.getBoolean("DragonSkullCraftingRecipeEnabled", category, true, "Enable or disable the crafting recipe for the dragon head.");
+		
+		LogHandler.logHandler.info("Creating and registering the Smelting category for the config!");
+		category = "Smelting";
+		config.addCustomCategoryComment(category, "Smelting");
+		
+		rottenFleshToLeatherSmelting = config.getBoolean("RottenFleshToLeatherSmelting", category, true, "Enable or disable the smelting of rotten flesh into leather.");
+		
+		boneToBoneMealSmelting = config.getBoolean("BoneToBoneMealSmelting", category, true, "Enable or disable the smelting of bones into bone meal.");
+		
+		wheatToBreadSmelting = config.getBoolean("WheatToBreadSmelting", category, true, "Enable or disable the smelting of 3 wheat into bread.");
+		
+		slimeballToMagmaCreamSmelting = config.getBoolean("SlimeballToMagmaCreamSmelting", category, true, "Enable or disable the smelting of a slime ball into magma cream.");
+		
+		enderEyeToEnderPearlSmelting = config.getBoolean("EyeOfEnderToEnderPearlSmelting", category, true, "Enable or disable the smelting of eyes of ender into ender pearls.");
 		
 		config.save();
 		LogHandler.logHandler.info("Saved the config.");
