@@ -1,4 +1,4 @@
-package net.dragonmouth.dmscraftingtweaks.proxy;
+package net.jusanov.jusanovscraftingtweaks.proxy;
 
 public class CommonProxy {
 

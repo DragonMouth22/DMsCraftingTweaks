@@ -1,13 +1,13 @@
-package net.dragonmouth.dmscraftingtweaks.common;
+package net.jusanov.jusanovscraftingtweaks.common;
 
 import java.io.File;
 
-import net.dragonmouth.dmscraftingtweaks.crafting.CraftingManager;
-import net.dragonmouth.dmscraftingtweaks.handlers.ConfigHandler;
-import net.dragonmouth.dmscraftingtweaks.handlers.LogHandler;
-import net.dragonmouth.dmscraftingtweaks.proxy.ClientProxy;
-import net.dragonmouth.dmscraftingtweaks.proxy.CommonProxy;
-import net.dragonmouth.dmscraftingtweaks.proxy.ServerProxy;
+import net.jusanov.jusanovscraftingtweaks.crafting.CraftingManager;
+import net.jusanov.jusanovscraftingtweaks.handlers.ConfigHandler;
+import net.jusanov.jusanovscraftingtweaks.handlers.LogHandler;
+import net.jusanov.jusanovscraftingtweaks.proxy.ClientProxy;
+import net.jusanov.jusanovscraftingtweaks.proxy.CommonProxy;
+import net.jusanov.jusanovscraftingtweaks.proxy.ServerProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;

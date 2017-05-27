@@ -1,4 +1,4 @@
-package net.dragonmouth.dmscraftingtweaks.handlers;
+package net.jusanov.jusanovscraftingtweaks.handlers;
 
 import java.io.File;
 

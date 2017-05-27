@@ -1,7 +1,7 @@
-package net.dragonmouth.dmscraftingtweaks.crafting;
+package net.jusanov.jusanovscraftingtweaks.crafting;
 
-import net.dragonmouth.dmscraftingtweaks.handlers.ConfigHandler;
-import net.dragonmouth.dmscraftingtweaks.handlers.LogHandler;
+import net.jusanov.jusanovscraftingtweaks.handlers.ConfigHandler;
+import net.jusanov.jusanovscraftingtweaks.handlers.LogHandler;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;

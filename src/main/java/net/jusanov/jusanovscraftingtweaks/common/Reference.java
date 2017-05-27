@@ -1,4 +1,4 @@
-package net.dragonmouth.dmscraftingtweaks.common;
+package net.jusanov.jusanovscraftingtweaks.common;
 
 public class Reference {
 
